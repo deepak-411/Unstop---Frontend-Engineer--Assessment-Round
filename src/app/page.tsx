@@ -97,25 +97,27 @@ export default function UserDashboard() {
         </Button>
       </nav>
       <div className="max-w-7xl mx-auto">
-        <header className="flex items-center justify-between mb-6">
+        <header className="relative flex justify-center items-center mb-6">
           <h1 className="text-3xl font-bold text-primary">Frontend Engineer - Assessment Round</h1>
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-            <Button onClick={() => setIsDialogOpen(true)}>
-              <PlusCircle className="mr-2 h-4 w-4" />
-              Add User
-            </Button>
-            <DialogContent className="sm:max-w-[425px]">
-              <DialogHeader>
-                <DialogTitle>Add New User</DialogTitle>
-              </DialogHeader>
-              <React.Suspense fallback={<Skeleton className="h-64" />}>
-                <UserForm 
-                  onUserAdd={handleAddUser}
-                  setOpen={setIsDialogOpen}
-                />
-              </React.Suspense>
-            </DialogContent>
-          </Dialog>
+          <div className="absolute right-0">
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <Button onClick={() => setIsDialogOpen(true)}>
+                <PlusCircle className="mr-2 h-4 w-4" />
+                Add User
+              </Button>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Add New User</DialogTitle>
+                </DialogHeader>
+                <React.Suspense fallback={<Skeleton className="h-64" />}>
+                  <UserForm 
+                    onUserAdd={handleAddUser}
+                    setOpen={setIsDialogOpen}
+                  />
+                </React.Suspense>
+              </DialogContent>
+            </Dialog>
+          </div>
         </header>
 
         <main className="grid grid-cols-1 lg:grid-cols-3 gap-6">
