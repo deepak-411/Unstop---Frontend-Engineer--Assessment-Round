@@ -142,7 +142,7 @@ export default function RegisterPage() {
         </Card>
       </div>
       <footer className="text-center p-4 text-muted-foreground text-sm">
-        © 2024 Frontend Engineer - Assessment Round. All Rights Reserved.
+        © 2024 All Rights Reserved, Deepak Kumar
       </footer>
     </div>
   );
