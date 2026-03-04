@@ -89,7 +89,7 @@ export default function UserDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-8">
+    <div className="bg-background text-foreground p-4 sm:p-6 md:p-8">
       <nav className="max-w-7xl mx-auto mb-4 flex justify-end gap-4">
          <Button variant="ghost" onClick={handleLogout}>
           <LogOut className="mr-2 h-4 w-4" />
@@ -98,7 +98,7 @@ export default function UserDashboard() {
       </nav>
       <div className="max-w-7xl mx-auto">
         <header className="flex items-center justify-between mb-6">
-          <h1 className="text-3xl font-bold text-primary">AdminWise Hub</h1>
+          <h1 className="text-3xl font-bold text-primary">Frontend Engineer - Assessment Round</h1>
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <Button onClick={() => setIsDialogOpen(true)}>
               <PlusCircle className="mr-2 h-4 w-4" />
