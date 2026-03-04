@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
         <Toaster />
         <footer className="text-center p-4 text-muted-foreground text-sm">
-          © 2024 All Rights Reserved, Deepak Kumar
+          © {new Date().getFullYear()} All Rights Reserved, Deepak Kumar
         </footer>
       </body>
     </html>

@@ -107,9 +107,6 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </div>
-      <footer className="text-center p-4 text-muted-foreground text-sm">
-        © 2024 All Rights Reserved, Deepak Kumar
-      </footer>
     </div>
   );
 }
