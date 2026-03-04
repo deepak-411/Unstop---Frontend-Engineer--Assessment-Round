@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { PlusCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -63,6 +64,14 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-8">
+      <nav className="max-w-7xl mx-auto mb-4 flex justify-end gap-4">
+        <Link href="/login" passHref>
+          <Button variant="ghost">Login</Button>
+        </Link>
+        <Link href="/register" passHref>
+          <Button variant="ghost">Register</Button>
+        </Link>
+      </nav>
       <div className="max-w-7xl mx-auto">
         <header className="flex items-center justify-between mb-6">
           <h1 className="text-3xl font-bold text-primary">AdminWise Hub</h1>
