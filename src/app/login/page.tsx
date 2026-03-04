@@ -44,6 +44,7 @@ export default function LoginPage() {
   function onSubmit(data: LoginFormValues) {
     // Mock login and redirect
     console.log('User logged in:', data.email);
+    localStorage.setItem('isLoggedIn', 'true');
     toast({
       title: 'Login Successful',
       description: 'Redirecting to your dashboard...',

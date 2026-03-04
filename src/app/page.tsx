@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { PlusCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { PlusCircle, LogOut } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -48,6 +48,19 @@ const initialUsers: User[] = [
 export default function UserDashboard() {
   const [users, setUsers] = React.useState<User[]>(initialUsers);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const router = useRouter();
+
+  React.useEffect(() => {
+    // This check runs only on the client-side
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn !== 'true') {
+      router.push('/login');
+    } else {
+      setIsLoading(false);
+    }
+  }, [router]);
+
 
   const handleAddUser = (user: Omit<User, "id">) => {
     setUsers((prevUsers) => [
@@ -56,21 +69,32 @@ export default function UserDashboard() {
     ]);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    router.push('/login');
+  };
+
   const roleColors: Record<User["role"], "default" | "secondary" | "destructive"> = {
     Admin: "destructive",
     Editor: "secondary",
     Viewer: "default",
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <p>Loading & Verifying Authentication...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-8">
       <nav className="max-w-7xl mx-auto mb-4 flex justify-end gap-4">
-        <Link href="/login" passHref>
-          <Button variant="ghost">Login</Button>
-        </Link>
-        <Link href="/register" passHref>
-          <Button variant="ghost">Register</Button>
-        </Link>
+         <Button variant="ghost" onClick={handleLogout}>
+          <LogOut className="mr-2 h-4 w-4" />
+          Logout
+        </Button>
       </nav>
       <div className="max-w-7xl mx-auto">
         <header className="flex items-center justify-between mb-6">
