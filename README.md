@@ -145,10 +145,7 @@ Implemented using Angular module lazy loading.
 
 Loaded dynamically when the dashboard initializes.
 
-Example:
 
-```ts
-const { default: Chart } = await import('chart.js/auto');
 
 
 
