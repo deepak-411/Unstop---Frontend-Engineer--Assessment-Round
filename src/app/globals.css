@@ -68,3 +68,26 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+@layer utilities {
+  @keyframes colorful-text {
+    0% {
+      color: hsl(var(--chart-1));
+    }
+    25% {
+      color: hsl(var(--chart-2));
+    }
+    50% {
+      color: hsl(var(--chart-3));
+    }
+    75% {
+      color: hsl(var(--chart-4));
+    }
+    100% {
+      color: hsl(var(--chart-5));
+    }
+  }
+  .animate-colorful {
+    animation: colorful-text 3s linear infinite alternate;
+  }
+}

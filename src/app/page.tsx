@@ -98,7 +98,7 @@ export default function UserDashboard() {
       </nav>
       <div className="max-w-7xl mx-auto">
         <header className="relative flex justify-center items-center mb-6">
-          <h1 className="text-3xl font-bold text-primary">Frontend Engineer - Assessment Round</h1>
+          <h1 className="text-3xl font-bold animate-colorful">Frontend Engineer - Assessment Round</h1>
           <div className="absolute right-0">
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <Button onClick={() => setIsDialogOpen(true)}>
