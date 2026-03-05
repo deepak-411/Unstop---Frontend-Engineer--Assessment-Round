@@ -58,6 +58,11 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <header className="text-center py-8">
+        <h1 className="text-3xl font-bold animate-colorful">
+          Frontend Engineer - Assessment Round
+        </h1>
+      </header>
       <div className="flex-grow flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader>
