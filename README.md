@@ -112,3 +112,80 @@ Loaded only when **Add User button** is clicked.
 ### Chart.js
 Loaded dynamically using:
 
+
+This prevents Chart.js from being included in the initial bundle.
+
+---
+
+# RxJS State Management
+
+User state is managed using **BehaviorSubject**.
+
+UserService responsibilities:
+
+- Maintain user list
+- Emit updates using `users$`
+- Provide `addUser()` method
+
+When a new user is added:
+
+- Table updates automatically
+- Chart updates automatically
+
+---
+
+# Technologies Used
+
+- Angular 14+
+- TypeScript
+- RxJS
+- Chart.js
+- Angular Reactive Forms
+
+---
+
+# UI Theme
+
+Primary Color  
+`#1c4980`
+
+Dark Accent  
+`#383838`
+
+UI Elements
+
+Button height: `48px`  
+Input height: `48px`
+
+---
+
+# Acceptance Criteria
+
+- User table displays Name, Email, Role
+- Pie chart displays role distribution
+- Table updates when a user is added
+- Chart updates dynamically
+- Add User modal works correctly
+- UserFormComponent is lazy loaded
+- Chart.js is dynamically imported
+- RxJS BehaviorSubject manages state
+- No console errors
+
+---
+
+# Bonus (Optional)
+
+- Table pagination
+- Role filtering
+- Loading indicators
+- Modal animations
+
+---
+
+# Author
+
+Deepak Kumar
+
+---
+
+© 2026 All Rights Reserved, Deepak Kumar
