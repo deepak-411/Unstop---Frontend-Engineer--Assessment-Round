@@ -150,7 +150,9 @@ Example:
 ```ts
 const { default: Chart } = await import('chart.js/auto');
 
-# Frontend Engineer - Assessment Round
+
+
+## Frontend Engineer - Assessment Round
 
 This project is a **User Dashboard Application built with Angular (v14+)**.  
 It demonstrates authentication pages, lazy loading, RxJS state management, and dynamic UI updates using Chart.js.
